@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Chi Café</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/gallery.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Chi Café</a>
+    <button id="menu-btn" aria-label="Toggle menu">☰</button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero-small container" style="background-image:url('images/gallery-hero.jpg')">
+      <h1>Gallery</h1>
+    </section>
+
+    <section class="container gallery-grid">
+      <img src="images/coffee1.jpg" alt="Latte art" class="gallery-img" tabindex="0">
+      <img src="images/coffee2.jpg" alt="Coffee beans" class="gallery-img" tabindex="0">
+      <img src="images/shop.jpg" alt="Cafe interior" class="gallery-img" tabindex="0">
+      <img src="images/event.jpg" alt="Live music event" class="gallery-img" tabindex="0">
+    </section>
+
+    <div id="lightbox" aria-hidden="true">
+      <span id="close">&times;</span>
+      <img id="lightbox-img" alt="Large view">
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 Chi Café</p>
+  </footer>
+</body>
+</html>

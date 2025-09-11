@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Café | Home</title>
+  <meta name="description" content="Chi Café – artisan coffee, pastries, and community.">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/scrollReveal.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Chi Café</a>
+    <button id="menu-btn" aria-label="Toggle menu">☰</button>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="carousel-container">
+  <div class="carousel" id="carousel">
+    <img src="images/hero.jpg" alt="Chi Café Exterior" class="carousel-img active">
+    <img src="images/images/coffee-hero-section.png" alt="Signature Coffee" class="carousel-img">
+    <img src="images/images/about-image.jpg" alt="Inside Chi Café" class="carousel-img">
+    <img src="images/images/hot-beverages.png" alt="Hot Beverages" class="carousel-img">
+  </div>
+  <div class="hero-content">
+    <h1>Welcome to Chi Café</h1>
+    <p>Specialty coffee, artisan pastries & a space to connect.</p>
+    <a href="menu.html" class="btn btn-lg">Explore Our Menu</a>
+  </div>
+  <div class="carousel-controls">
+    <button id="prevBtn" aria-label="Previous image">&#10094;</button>
+    <button id="nextBtn" aria-label="Next image">&#10095;</button>
+  </div>
+</section>
+
+    <section class="container">
+      <h2>Today’s Specials</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="images/images/coffee-hero-section.png" alt="Caramel Latte">
+          <h3>Caramel Latte</h3>
+          <p>Creamy espresso with rich caramel drizzle.</p>
+        </article>
+        <article class="card">
+          <img src="images/images/cold-beverages.png" alt="Berry Cold Brew">
+          <h3>Berry Cold Brew</h3>
+          <p>Cold-brewed coffee infused with fresh berries.</p>
+        </article>
+        <article class="card">
+          <img src="images/images/special-combo.png" alt="Almond Croissant">
+          <h3>Almond Croissant</h3>
+          <p>Flaky layers filled with almond cream.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container two-col">
+      <div>
+        <h2>Our Story</h2>
+        <p>Founded in 2018, Chi Café began as a neighborhood spot with a global vision: ethically sourced beans, small-batch roasting, and baristas who know your name.</p>
+        <a href="about.html" class="btn">More About Us</a>
+      </div>
+      <img src="images/images/about-image.jpg" alt="Inside Chi Café">
+    </section>
+
+    <section class="container">
+      <h2>Featured Drinks</h2>
+      <div class="grid">
+        <article><img src="images/images/hot-beverages.png" alt="Vanilla Latte"><h3>Vanilla Latte</h3></article>
+        <article><img src="images/images/refreshment.png" alt="Mocha"><h3>Mocha</h3></article>
+        <article><img src="images/images/cold-beverages.png" alt="Cold Brew"><h3>Cold Brew</h3></article>
+      </div>
+    </section>
+
+    <section class="container testimonials">
+      <h2>What Our Guests Say</h2>
+      <div class="grid">
+        <blockquote>
+          <p>“The best espresso I’ve ever had—and the atmosphere is perfect for working or catching up with friends.”</p>
+          <footer>– Maya R.</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Their almond croissant is to die for. Staff is always welcoming.”</p>
+          <footer>– Leo K.</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="container newsletter">
+      <h2>Stay in the Loop</h2>
+      <p>Sign up for weekly specials and Chi Café events.</p>
+      <form id="newsletterForm">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <div id="newsletterMessage"></div>
+    </section>
+
+    <section class="container">
+      <h2>Find Us</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 Chi Café – Crafted with ❤️ and great coffee.</p>
+  </footer>
+
+  <script>
+    // newsletter message
+    const form = document.getElementById('newsletterForm');
+    form?.addEventListener('submit', e=>{
+      e.preventDefault();
+      document.getElementById('newsletterMessage').textContent = 'Thanks for subscribing!';
+      form.reset();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.carousel-img');
+  let current = 0;
+
+  function showImage(idx) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === idx);
+    });
+  }
+
+  function nextImage() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+
+  function prevImage() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  }
+
+  document.getElementById('nextBtn').onclick = nextImage;
+  document.getElementById('prevBtn').onclick = prevImage;
+
+  setInterval(nextImage, 4000); // Auto-slide every 4 seconds
+});
+  </script>
+</body>
+</html>
