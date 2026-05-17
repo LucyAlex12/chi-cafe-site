@@ -1,47 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Chi Café</title>
+  <title>Gallery | Chi Cafe</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/layout.css">
   <script defer src="js/main.js"></script>
-  <script defer src="js/gallery.js"></script>
 </head>
 <body>
   <header class="navbar">
-    <a href="index.html" class="logo">Chi Café</a>
-    <button id="menu-btn" aria-label="Toggle menu">☰</button>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <a href="index.html" class="logo">Chi Cafe</a>
+    <button id="menu-btn" class="icon-btn" aria-label="Toggle menu">Menu</button>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero-small container" style="background-image:url('images/gallery-hero.jpg')">
-      <h1>Gallery</h1>
+    <section class="page-hero">
+      <p class="eyebrow">Visual menu</p>
+      <h1>Tap a moment.</h1>
+      <p>Open the gallery cards to preview Chi Cafe drinks, desserts, and community spaces.</p>
     </section>
 
-    <section class="container gallery-grid">
-      <img src="images/coffee1.jpg" alt="Latte art" class="gallery-img" tabindex="0">
-      <img src="images/coffee2.jpg" alt="Coffee beans" class="gallery-img" tabindex="0">
-      <img src="images/shop.jpg" alt="Cafe interior" class="gallery-img" tabindex="0">
-      <img src="images/event.jpg" alt="Live music event" class="gallery-img" tabindex="0">
+    <section class="section gallery-grid" id="galleryGrid">
+      <button data-src="images/images/gallery-1.jpg" data-caption="Morning counter service">
+        <img src="images/images/gallery-1.jpg" alt="Cafe counter">
+      </button>
+      <button data-src="images/images/gallery-2.jpg" data-caption="Friends and fresh coffee">
+        <img src="images/images/gallery-2.jpg" alt="Friends at cafe">
+      </button>
+      <button data-src="images/images/gallery-3.jpg" data-caption="Pastry shelf favorites">
+        <img src="images/images/gallery-3.jpg" alt="Pastries">
+      </button>
+      <button data-src="images/images/gallery-4.jpg" data-caption="Warm corner seating">
+        <img src="images/images/gallery-4.jpg" alt="Cafe seating">
+      </button>
+      <button data-src="images/images/gallery-5.jpg" data-caption="Latte art lab">
+        <img src="images/images/gallery-5.jpg" alt="Latte art">
+      </button>
+      <button data-src="images/images/gallery-6.jpg" data-caption="Weekend event table">
+        <img src="images/images/gallery-6.jpg" alt="Cafe event">
+      </button>
     </section>
-
-    <div id="lightbox" aria-hidden="true">
-      <span id="close">&times;</span>
-      <img id="lightbox-img" alt="Large view">
-    </div>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Chi Café</p>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button id="closeLightbox" aria-label="Close gallery preview">Close</button>
+    <img id="lightboxImg" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <footer>
+    <p>Chi Cafe - every cup has a scene.</p>
   </footer>
 </body>
 </html>

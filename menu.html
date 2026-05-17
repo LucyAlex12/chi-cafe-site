@@ -1,45 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Chi Café</title>
+  <title>Menu | Chi Cafe</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/layout.css">
   <script defer src="js/main.js"></script>
 </head>
 <body>
   <header class="navbar">
-    <a href="index.html" class="logo">Chi Café</a>
-    <button id="menu-btn" aria-label="Toggle menu">☰</button>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <a href="index.html" class="logo">Chi Cafe</a>
+    <button id="menu-btn" class="icon-btn" aria-label="Toggle menu">Menu</button>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero-small container" style="background-image:url('images/menu-hero.jpg')">
-      <h1>Our Menu</h1>
+    <section class="page-hero">
+      <p class="eyebrow">Order builder</p>
+      <h1>Make a menu combo.</h1>
+      <p>Filter the menu, add items to your tray, and watch your total update instantly.</p>
     </section>
 
-    <section class="container menu-grid">
-      <article><h3>Espresso</h3><p>$2.50</p></article>
-      <article><h3>Cappuccino</h3><p>$3.00</p></article>
-      <article><h3>Latte</h3><p>$3.50</p></article>
-      <article><h3>Mocha</h3><p>$3.75</p></article>
-      <article><h3>Cold Brew</h3><p>$3.25</p></article>
-      <article><h3>Matcha Latte</h3><p>$4.00</p></article>
-      <article><h3>Almond Croissant</h3><p>$2.50</p></article>
-      <article><h3>Blueberry Muffin</h3><p>$2.00</p></article>
+    <section class="section menu-layout">
+      <aside class="menu-tools">
+        <h2>Filters</h2>
+        <div class="filter-pills" id="menuFilters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="coffee">Coffee</button>
+          <button data-filter="cold">Cold</button>
+          <button data-filter="food">Food</button>
+          <button data-filter="sweet">Sweet</button>
+        </div>
+        <label class="search-box">
+          Search menu
+          <input id="menuSearch" type="search" placeholder="latte, croissant, brew">
+        </label>
+        <div class="tray sticky-tray">
+          <h3>Your order</h3>
+          <ul id="quickOrderList"></ul>
+          <div class="tray-total">
+            <span>Total</span>
+            <strong id="quickOrderTotal">$0.00</strong>
+          </div>
+          <button class="btn" id="clearQuickOrder">Clear tray</button>
+        </div>
+      </aside>
+      <section class="menu-items" id="menuItems" aria-live="polite"></section>
     </section>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Chi Café</p>
+  <footer>
+    <p>Chi Cafe - fresh cups, warm plates, better days.</p>
   </footer>
 </body>
 </html>

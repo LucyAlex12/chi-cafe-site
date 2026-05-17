@@ -1,49 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Chi Café</title>
+  <title>Reserve | Chi Cafe</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/layout.css">
   <script defer src="js/main.js"></script>
 </head>
 <body>
   <header class="navbar">
-    <a href="index.html" class="logo">Chi Café</a>
-    <button id="menu-btn" aria-label="Toggle menu">☰</button>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <a href="index.html" class="logo">Chi Cafe</a>
+    <button id="menu-btn" class="icon-btn" aria-label="Toggle menu">Menu</button>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero-small container" style="background-image:url('images/contact-hero.jpg')">
-      <h1>Contact Us</h1>
+    <section class="page-hero">
+      <p class="eyebrow">Reservations</p>
+      <h1>Book a cozy table.</h1>
+      <p>Reserve a work table, study corner, birthday table, or weekend brunch spot.</p>
     </section>
 
-    <section class="container">
-      <form id="contactForm" class="contact-form">
-        <label>Name<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Message<textarea name="message" required></textarea></label>
-        <button type="submit" class="btn">Send Message</button>
-        <div id="formMessage" role="alert"></div>
+    <section class="section contact-layout">
+      <form id="contactForm" class="booking-form">
+        <label>Name <input name="name" required placeholder="Your name"></label>
+        <label>Email <input name="email" type="email" required placeholder="you@example.com"></label>
+        <label>Visit type
+          <select name="visit">
+            <option>Work table</option>
+            <option>Study session</option>
+            <option>Birthday table</option>
+            <option>Weekend brunch</option>
+          </select>
+        </label>
+        <label>Message <textarea name="message" required placeholder="Tell us what you need"></textarea></label>
+        <button class="btn" type="submit">Send request</button>
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
       </form>
-
-      <div class="map-wrapper" style="margin-top:2rem;">
-        <h2>Visit Our Café</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" loading="lazy"></iframe>
-      </div>
+      <aside class="contact-card">
+        <h2>Open hours</h2>
+        <p>Mon-Fri: 7:30 AM - 8:30 PM</p>
+        <p>Sat-Sun: 9:00 AM - 10:00 PM</p>
+        <h2>Vibe check</h2>
+        <p id="contactVibe">Best time for quiet work: weekday mornings.</p>
+        <button class="btn btn-ghost" id="vibeBtn">Suggest a visit time</button>
+      </aside>
     </section>
   </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Chi Café</p>
+  <footer>
+    <p>Chi Cafe - save a seat for your next idea.</p>
   </footer>
 </body>
 </html>
